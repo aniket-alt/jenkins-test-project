@@ -46,13 +46,13 @@ pipeline {
     post {
         success {
             echo 'All tests passed successfully!'
-            mail to: 'aniketanil.naik@sjsu.edu',
+            mail to: 'aniket.naik.anil@gmail.com',
                  subject: "Jenkins Pipeline SUCCESS - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "All tests passed. Build URL: ${env.BUILD_URL}"
         }
         failure {
             echo 'Some tests failed!'
-            mail to: 'aniketanil.naik@sjsu.edu',
+            mail to: 'aniket.naik.anil@gmail.com',
                  subject: "Jenkins Pipeline FAILED - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "Pipeline failed. Check console: ${env.BUILD_URL}console"
         }
