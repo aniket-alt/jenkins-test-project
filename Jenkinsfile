@@ -24,14 +24,14 @@ pipeline {
         stage('Run PyTest Suite') {
             steps {
                 echo 'Running PyTest tests...'
-                bat 'C:\\Users\\anike\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\pytest.exe tests/pytest/test_calculator.py -v --html=results/pytest/report.html --self-contained-html'
+                bat 'C:\\Users\\anike\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\pytest.exe test/pytest/test_calculator.py -v --html=results/pytest/report.html --self-contained-html'
             }
         }
 
         stage('Run Robot Framework Suite') {
             steps {
                 echo 'Running Robot Framework tests...'
-                bat 'C:\\Users\\anike\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\robot.exe --outputdir results/robot tests/robot/calculator.robot'
+                bat 'C:\\Users\\anike\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\robot.exe --outputdir results/robot test/robot/calculator.robot'
             }
         }
 
