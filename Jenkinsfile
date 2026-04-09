@@ -1,6 +1,13 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHON = 'C:\\Users\\anike\\AppData\\Local\\Programs\\Python\\Python311\\python.exe'
+        PIP = 'C:\\Users\\anike\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\pip.exe'
+        PYTEST = 'C:\\Users\\anike\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\pytest.exe'
+        ROBOT = 'C:\\Users\\anike\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\robot.exe'
+    }
+
     triggers {
         cron('0 0 * * *')
         githubPush()
