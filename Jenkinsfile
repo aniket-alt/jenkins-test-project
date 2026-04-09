@@ -2,9 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        // Cron trigger - runs every day at midnight
         cron('0 0 * * *')
-        // Code push trigger - runs when code is pushed to GitHub
         githubPush()
     }
 
@@ -48,52 +46,18 @@ pipeline {
     post {
         success {
             echo 'All tests passed successfully!'
-            mail(
-                to: 'aniket.naik.anil@gmail.com',
-                subject: "✅ Jenkins Pipeline SUCCESS - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """
-                    Hi Aniket,
-
-                    Good news! All tests passed successfully.
-
-                    Pipeline Details:
-                    - Job: ${env.JOB_NAME}
-                    - Build Number: ${env.BUILD_NUMBER}
-                    - Status: SUCCESS
-                    - Build URL: ${env.BUILD_URL}
-
-                    Check the archived reports for details:
-                    ${env.BUILD_URL}artifact/results/
-
-                    Regards,
-                    Jenkins
-                """
-            )
+            mail to: 'aniketanil.naik@sjsu.edu',
+                 subject: "Jenkins Pipeline SUCCESS - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "All tests passed. Build URL: ${env.BUILD_URL}"
         }
         failure {
-            echo 'Some tests failed! Sending failure notification...'
-            mail(
-                to: 'aniket.naik.anil@gmail.com',
-                subject: "❌ Jenkins Pipeline FAILED - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """
-                    Hi Aniket,
-
-                    The pipeline has failed. Immediate attention required!
-
-                    Pipeline Details:
-                    - Job: ${env.JOB_NAME}
-                    - Build Number: ${env.BUILD_NUMBER}
-                    - Status: FAILED
-                    - Build URL: ${env.BUILD_URL}
-
-                    Please check the console output and archived reports:
-                    ${env.BUILD_URL}console
-                    ${env.BUILD_URL}artifact/results/
-
-                    Regards,
-                    Jenkins
-                """
-            )
+            echo 'Some tests failed!'
+            mail to: 'aniketanil.naik@sjsu.edu',
+                 subject: "Jenkins Pipeline FAILED - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Pipeline failed. Check console: ${env.BUILD_URL}console"
         }
         always {
-            echo 'Pipel
+            echo 'Pipeline completed.'
+        }
+    }
+}
