@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.6 on win32)" generated="2026-04-09T01:15:21.215676" rpa="false" schemaversion="5">
+<suite id="s1" name="Calculator" source="C:\Users\anike\OneDrive\Desktop\jenkins-test-project\test\robot\calculator.robot">
+<test id="s1-t1" name="Test Add Positive Numbers" line="13">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.246098" level="INFO">${result} = 5</msg>
+<var>${result}</var>
+<arg>__import__('sys').path.insert(0, r'${CALC_PATH}') or __import__('calculator').add(2, 3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.246098" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.247098" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.247098" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.244099" elapsed="0.002999"/>
+</test>
+<test id="s1-t2" name="Test Add Negative Numbers" line="17">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.251608" level="INFO">${result} = -5</msg>
+<var>${result}</var>
+<arg>__import__('calculator').add(-2, -3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.251608" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.254156" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>-5</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.254156" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.251608" elapsed="0.004548"/>
+</test>
+<test id="s1-t3" name="Test Add Zero" line="21">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.265689" level="INFO">${result} = 5</msg>
+<var>${result}</var>
+<arg>__import__('calculator').add(5, 0)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.265689" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.267686" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.267686" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.263721" elapsed="0.005965"/>
+</test>
+<test id="s1-t4" name="Test Subtract Positive Numbers" line="25">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.271679" level="INFO">${result} = 6</msg>
+<var>${result}</var>
+<arg>__import__('calculator').subtract(10, 4)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.271679" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.273197" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>6</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.273197" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.270680" elapsed="0.004512"/>
+</test>
+<test id="s1-t5" name="Test Subtract Zero" line="29">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.283739" level="INFO">${result} = 5</msg>
+<var>${result}</var>
+<arg>__import__('calculator').subtract(5, 0)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.283739" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.285715" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.285715" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.283739" elapsed="0.001976"/>
+</test>
+<test id="s1-t6" name="Test Multiply Positive Numbers" line="33">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.295888" level="INFO">${result} = 12</msg>
+<var>${result}</var>
+<arg>__import__('calculator').multiply(3, 4)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.295888" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.297892" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>12</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.297892" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.293881" elapsed="0.006009"/>
+</test>
+<test id="s1-t7" name="Test Multiply By Zero" line="37">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.305156" level="INFO">${result} = 0</msg>
+<var>${result}</var>
+<arg>__import__('calculator').multiply(5, 0)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.305156" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.305972" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.305972" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.302888" elapsed="0.003084"/>
+</test>
+<test id="s1-t8" name="Test Divide Positive Numbers" line="41">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.307078" level="INFO">${result} = 5.0</msg>
+<var>${result}</var>
+<arg>__import__('calculator').divide(10, 2)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.307078" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.307945" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.307945" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.307078" elapsed="0.000867"/>
+</test>
+<test id="s1-t9" name="Test Divide By Zero" line="45">
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-09T01:15:21.308952" level="FAIL">Evaluating expression "__import__('calculator').divide(10, 0)" failed: ValueError: Cannot divide by zero</msg>
+<arg>__import__('calculator').divide(10, 0)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="FAIL" start="2026-04-09T01:15:21.308952" elapsed="0.000000">Evaluating expression "__import__('calculator').divide(10, 0)" failed: ValueError: Cannot divide by zero</status>
+</kw>
+<arg>*Cannot divide by zero*</arg>
+<arg>Evaluate</arg>
+<arg>__import__('calculator').divide(10, 0)</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2026-04-09T01:15:21.308952" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-04-09T01:15:21.307945" elapsed="0.001007"/>
+</test>
+<status status="PASS" start="2026-04-09T01:15:21.217677" elapsed="0.092274"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Calculator" id="s1" pass="9" fail="0" skip="0">Calculator</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
